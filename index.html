@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #000000">
+      <a-assets>
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        <!-- Planet textures -->
+        <img id="sun" src="images/2k_sun.jpg">
+        <img id="earth" src="images/earth.jpg">
+        <img id="moon" src="images/moon.jpg">
+      </a-assets>
+      <a-entity id="camera" camera look-controls wasd-controls="acceleration:30" position="1 0 -20" ></a-entity>
+      <a-sphere position="0 0 0" emissive="#FFFF00" radius="1" color="#FFFF00" ></a-sphere>
+      <a-sphere position="0 0 0" src="#sun" material="opacity: 0.5; transparent: true" radius="1.01" color="#FFFF00" ></a-sphere>
+      <a-entity light="type: ambient; color: #444"></a-entity>
+      <a-entity light="type: point; intensity: 2.0; distance: 200; decay: 0.5; "  position="0 0 0"></a-entity>
+      <a-ring   position="0 0 0"  rotation="-90 0 0" color="#ffffff" radius-inner="25" radius-outer="10.02"></a-ring>
+      <a-entity rotation="0 0 0" position="0 0 -25" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+          <a-sphere position="0 0 0" src="#earth" rotation="0 10 5" radius="0.127" color="#8888FF" shadow>
+          </a-sphere>
+      </a-entity>
+      <a-sphere position="0 0 -25"  material="opacity: 0.2; transparent: true" rotation="0 0 0" radius="0.14" color="#DDDDFF" shadow></a-sphere>
+      <a-ring   position="0 0 -25"  rotation="-90 0 0" color="#ffffff" radius-inner="3" radius-outer="3.2"></a-ring>
+      <a-sphere position="2.9 0.5 -25.7" src="#moon" rotation="0 0 0" radius="0.034" color="#CCCCCC" shadow></a-sphere>
+    </a-scene>
+  </body>
+</html>
