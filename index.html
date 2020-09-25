@@ -9,29 +9,45 @@
   <body>
     <a-scene background="color: #000000">
       <a-assets>
-        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-        <!-- Planet textures -->
         <img id="sun" src="images/2k_sun.jpg">
         <img id="earth" src="images/earth.jpg">
         <img id="moon" src="images/moon.jpg">
+        <img id="venus" src="images/venus.jpg">
+        <img id="mercury" src="images/mercury.jpg">
       </a-assets>
-      <a-entity id="camera" camera look-controls wasd-controls="acceleration:30" position="0.3 0.1 -24.5" ></a-entity>
-      <a-sphere position="0 0 0" emissive="#FFEE00" radius="1" color="#FFFF00" ></a-sphere>
-      <a-sphere position="0 0 0" src="#sun" material="opacity: 0.3; transparent: true" radius="1.01" color="#FFFF00" ></a-sphere>
+      
       <a-entity light="type: ambient; color: #222"></a-entity>
       <a-entity light="type: point; intensity: 2.0; distance: 1000; decay: 1; castShadow:true; "  position="0 0 0"></a-entity>
-      <a-ring   position="0 0 0"  rotation="-90 0 0" color="#ffffff" radius-inner="25" radius-outer="10.02"></a-ring>
-      <a-entity rotation="0 0 0" position="0 0 -25" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 2000">
-          <a-sphere position="0 0 0" src="#earth" rotation="0 10 5" radius="0.127" color="#8888FF" shadow>
-          </a-sphere>
+      
+      <a-sphere position="0 0 0" emissive="#FFFF40" radius="1" color="#FFFF00" ></a-sphere>
+      <a-sphere position="0 0 0" src="#sun" material="opacity: 0.4; transparent: true" radius="1.02" color="#FFFF00" ></a-sphere>
+
+      <a-ring   position="0 0 0"  rotation="-90 0 0" color="#ffffff" radius-inner="7" radius-outer="7.02"></a-ring>
+      <a-entity rotation="0 0 0" position="0 0 0" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 14000">
+        <a-sphere position="0 0 -7" src="#mercury" radius="0.1" color="#FFFFC0" ></a-sphere>
       </a-entity>
-      <a-sphere position="0 0 -25"  material="opacity: 0.15; transparent: true" rotation="0 0 0" radius="0.14" color="#DDDDFF" shadow></a-sphere>
-      <a-ring   position="0 0 -25"  rotation="-85 0 0" color="#ffffff" radius-inner="4" radius-outer="4.02"></a-ring>
-      <a-entity rotation="5 0 0" position="0 0 -25" >
-        <a-entity rotation="0 0 0" position="0 0 0" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 56000">
-          <a-sphere position="0 0 -4" src="#moon" rotation="0 0 0" radius="0.1" color="#CCCCCC" shadow></a-sphere>
+      
+      <a-ring   position="0 0 0"  rotation="-90 0 0" color="#ffffff" radius-inner="17" radius-outer="17.02"></a-ring>
+      <a-entity rotation="0 0 0" position="0 0 0" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 19000">
+        <a-sphere position="0 0 -17" src="#venus" radius="0.2" color="#FFFFC0" ></a-sphere>
+      </a-entity>
+
+      <a-ring   position="0 0 0"  rotation="-90 0 0" color="#ffffff" radius-inner="39" radius-outer="10.02"></a-ring>
+      <a-entity rotation="0 0 0" position="0 0 0" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 24000">
+        <a-entity id="camera" camera look-controls wasd-controls="acceleration:50" position="0 0 -38" ></a-entity>
+        <a-entity rotation="0 0 0" position="0 0 -39" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 2000">
+            <a-sphere position="0 0 0" src="#earth" rotation="0 10 5" radius="0.19" color="#8888FF" shadow>
+            </a-sphere>
+        </a-entity>
+        <a-sphere position="0 0 -39"  material="opacity: 0.15; transparent: true" rotation="0 0 0" radius="0.20" color="#DDDDFF" shadow></a-sphere>
+        <a-ring   position="0 0 -39"  rotation="-85 0 0" color="#ffffff" radius-inner="4" radius-outer="4.02"></a-ring>
+        <a-entity rotation="5 0 0" position="0 0 -39" >
+          <a-entity rotation="0 0 0" position="0 0 0" animation="easing: linear; property: rotation; to: 0 360 0; loop: true; dur: 56000">
+            <a-sphere position="0 0 -4" src="#moon" rotation="0 0 0" radius="0.1" color="#CCCCCC" shadow></a-sphere>
+          </a-entity>
         </a-entity>
       </a-entity>
+
     </a-scene>
   </body>
 </html>
